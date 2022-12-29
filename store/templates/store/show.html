@@ -1,0 +1,28 @@
+{% extends 'store/main.html' %}
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID Product</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+
+                <td>
+                    <a href="/edit/{{product.id}}">Edit</a>
+                    <a href="/delete/{{product.id}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <button><a style="color:white;" href="/emp">Add New Record</a></button>
+{% endblock content %}
